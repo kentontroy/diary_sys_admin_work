@@ -19,7 +19,7 @@ grubby --info DEFAULT
 reboot
 ```
 
-#### FreeIPA DNS examples
+#### FreeIPA examples for DNS wildcards
 ```
 Newer versions of Cloudera can deploy virtual clusters for ML and Data Engineering on Kubernetes and OpenShift.
 If a customer's security standards allow it, the use of wildcard naming in DNS eases name resolution of dynamic

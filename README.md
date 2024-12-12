@@ -25,9 +25,9 @@ Newer versions of Cloudera can deploy virtual clusters for ML and Data Engineeri
 If a customer's security standards allow it, it's easier to use wildcard naming in DNS to support the dynamic
 virtual hostnames that arise. For the examples below, assume a domain name of cloudera-lab.com.
 
-You will encounter a dynamically created name such as console-cdp.apps.cloudera-lab.com representing the virtual host
-for the Control Plane. As another example, you will see ml-c72eb255-d47.apps.cloudera-lab.com as a virtual host for a
-Cloudera Machine Learning environment.
+You will encounter a dynamically created name such as console-cdp.apps.cloudera-lab.com representing the virtual
+host for the Control Plane. As another example, you will see ml-c72eb255-d47.apps.cloudera-lab.com as a virtual
+host for a Cloudera Machine Learning environment.
 
 Rather than create static A records for these in DNS, consider using wildcards such as:
 

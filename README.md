@@ -22,7 +22,7 @@ reboot
 #### FreeIPA DNS examples
 ```
 Newer versions of Cloudera can deploy virtual clusters for ML and Data Engineering on Kubernetes and OpenShift.
-If a customer's security standards allow it, it's easier to use wildcard naming in DNS to support the dynamic
+If a customer's security standards allow it, the use of wildcard naming in DNS eases name resolution of dynamic
 virtual hostnames that arise. For the examples below, assume a domain name of cloudera-lab.com.
 
 You will encounter a dynamically created name such as console-cdp.apps.cloudera-lab.com representing the virtual
@@ -36,13 +36,12 @@ ipa dnsrecord-add 1.168.192.in-addr.arpa. 5 --ptr-rec master-ecs-server.cloudera
 ipa dnsrecord-add cloudera-lab.com. --cname-hostname=master-ecs-server apps
 ipa dnsrecord-add cloudera-lab.com. *.apps --a-rec 192.168.1.5
 
-The syntax above first creates a Reverse Address Zone for the subnet. The master host is then added to the zone. FreeIPA
-will automatically create a Forward Zone on your behalf. Next, you create a CNAME alias that maps apps.cloudera-lab.com to
-master-ecs-server.cloudera-lab.com. Finally, you create an A record that maps *.apps.cloudera-lab.com to
-master-ecs-server.cloudera-lab.com.
+The syntax above first creates a Reverse Address Zone for the subnet. The master host is then added to the zone.
+FreeIPA will automatically create a Forward Zone on your behalf. Next, you create a CNAME alias that maps
+apps.cloudera-lab.com to master-ecs-server.cloudera-lab.com. Finally, you create an A record that maps
+*.apps.cloudera-lab.com to master-ecs-server.cloudera-lab.com.
 
 Essentially, as Cloudera spins up multiple virtual hosts dynamically, all of them will have some name,
-e.g. xl1rsx4532.apps.cloudera-lab.com, that map to a master node and can potentially float to another node in the event of
-a failover.
-
+e.g. xl1rsx4532.apps.cloudera-lab.com, that map to a master node and can potentially float to another node in the
+event of a failover.
 ```

@@ -22,8 +22,8 @@ reboot
 #### FreeIPA DNS examples
 ```
 Newer versions of Cloudera can deploy virtual clusters for ML and Data Engineering on Kubernetes and OpenShift.
-If a customer's security standards allow it, it's easier to use wildcard naming in DNS to support the dynamic virtual
-hostnames that arise. For the examples below, assume a domain name of cloudera-lab.com.
+If a customer's security standards allow it, it's easier to use wildcard naming in DNS to support the dynamic
+virtual hostnames that arise. For the examples below, assume a domain name of cloudera-lab.com.
 
 You will encounter a dynamically created name such as console-cdp.apps.cloudera-lab.com representing the virtual host
 for the Control Plane. As another example, you will see ml-c72eb255-d47.apps.cloudera-lab.com as a virtual host for a
@@ -42,6 +42,7 @@ master-ecs-server.cloudera-lab.com. Finally, you create an A record that maps *.
 master-ecs-server.cloudera-lab.com.
 
 Essentially, as Cloudera spins up multiple virtual hosts dynamically, all of them will have some name,
-e.g. xl1rsx4532.apps.cloudera-lab.com, that map to a master node and can potentially float to another node in the event of a failover.
+e.g. xl1rsx4532.apps.cloudera-lab.com, that map to a master node and can potentially float to another node in the event of
+a failover.
 
 ```

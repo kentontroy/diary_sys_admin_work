@@ -2,8 +2,8 @@
 
 #### FreeIPA IPv6 ruminations
 ```
-So, FreeIPA requires IPv6. As an alternative to AD, Cloudera can use FreeIPA for LDAP, as a KDC, and for DNS. However,
-Cloudera doesn't support IPv6.
+So, FreeIPA requires IPv6. As an alternative to AD, Cloudera can use FreeIPA for LDAP, as a KDC, and for DNS.
+However, Cloudera doesn't support IPv6.
 
 When using a dedicated node for FreeIPA that's only configured for IPv4, you will encounter this error:
 "IPv6 stack is enabled in the kernel but there is no interface that

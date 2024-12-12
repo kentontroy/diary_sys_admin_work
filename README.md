@@ -1,4 +1,4 @@
-### A primitive but easy way to keep notes and thoughts on ongoing System Administration tasks and DevOps / MLOps challenges
+### Some notes and thoughts on ongoing System Administration tasks and DevOps / MLOps challenges
 
 #### FreeIPA IPv6 ruminations
 ```

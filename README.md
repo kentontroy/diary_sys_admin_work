@@ -45,7 +45,7 @@ Essentially, as Cloudera spins up multiple virtual hosts dynamically, all of the
 e.g. xl1rsx4532.apps.cloudera-lab.com, that map to a master node and can potentially float to another node in the
 event of a failover.
 ```
-#### Postgresql connectivity issue and subsequent gymanistics thereafter when upgrading Cloudera Manager
+#### Postgresql connectivity issue and subsequent gymnastics thereafter when upgrading Cloudera Manager
 ```
 Cloudera Manager (CM) uses a database (in test cases, an embedded Postgresql instance) to store configuration details and
 metadata for services such as SCM, Ranger, Hive, Hue, etc. When updating Cloudera Manager with the latest cumulative

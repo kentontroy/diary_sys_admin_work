@@ -45,3 +45,17 @@ Essentially, as Cloudera spins up multiple virtual hosts dynamically, all of the
 e.g. xl1rsx4532.apps.cloudera-lab.com, that map to a master node and can potentially float to another node in the
 event of a failover.
 ```
+#### Postgresql connectivity issue and subsequent gymanistics thereafter when upgrading Cloudera Manager
+```
+Cloudera Manager (CM) uses a database (in test cases, an embedded Postgresql instance) to store configuration details and
+metadata for services such as SCM, Ranger, Hive, Hue, etc. When updating Cloudera Manager with the latest cumulative
+hot fix, the cloudera-scm-server-db service would not start.
+
+I forgot to turn off services that use the Postgresql instance such as Hive while performing the upgrade of
+cloudera-scm-server. Removing lock files for Postgresql didn't work. So, I rebooted the Cloudera Manager node. The
+cloudera-scm-server-db then started successfully. However, upon reboot, /etc/resolv.conf, 'mysteriously' changed the
+nameserver reference to point to an invalid IP. This wasn't detected until receiving Java Socket connection failures
+when CM tries to perform heartbeat, service monitoring, and other checks. It wasn't intuitive at first that the
+connection failures were due to an inability of the CM server to resolve the hostnames of the cluster nodes to be
+monitored.
+```
